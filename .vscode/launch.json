@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "IngresoDatos",
+      "request": "launch",
+      "mainClass": "IngresoDatos",
+      "projectName": "Labo2025_Miranda_Orgnero_9ad2e03"
+    },
+    {
+      "type": "java",
+      "name": "NumeroMayor",
+      "request": "launch",
+      "mainClass": "NumeroMayor",
+      "projectName": "Labo2025_Miranda_Orgnero_9ad2e03"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "/home/alumno/Documentos/Labo2025_Miranda_Orgnero",
+      "program": "/home/alumno/Documentos/Labo2025_Miranda_Orgnero/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
