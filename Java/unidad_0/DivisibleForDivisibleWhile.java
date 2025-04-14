@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package unidad_0;
 
 public class DivisibleForDivisibleWhile {
     public static void main(String[] args) {

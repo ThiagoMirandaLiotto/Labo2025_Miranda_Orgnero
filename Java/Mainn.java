@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class Mainn {
     public static void main(String[] args) {
-        //Main Circulo:
-        /*Circulo c1 = new Circulo(4);
+        //Main figuras_geometricas.Circulo:
+        /*figuras_geometricas.Circulo c1 = new figuras_geometricas.Circulo(4);
         System.out.println("Radio: " + c1.getRadio());
         System.out.println("Area: " + c1.calcularArea());
         System.out.println("Perimetro: " + c1.calcularPerimetro());
@@ -13,19 +13,19 @@ public class Mainn {
         System.out.println("Introduce el radio para el segundo círculo: ");
         float radioUsuario = scanner.nextFloat();
 
-        Circulo c2 = new Circulo(radioUsuario);
+        figuras_geometricas.Circulo c2 = new figuras_geometricas.Circulo(radioUsuario);
         System.out.println("Radio: " + c2.getRadio());
         System.out.println("Area: " + c2.calcularArea());
         System.out.println("Perimetro: " + c2.calcularPerimetro());*/
 
 
-        //Main Rectangulo
+        //Main figuras_geometricas.Rectangulo
         /*Scanner scanner1 = new Scanner(System.in);
         float base = scanner1.nextFloat();
         Scanner scanner2 = new Scanner(System.in);
         float altura = scanner2.nextFloat();
 
-        Rectangulo r1 = new Rectangulo(base, altura);
+        figuras_geometricas.Rectangulo r1 = new figuras_geometricas.Rectangulo(base, altura);
 
         System.out.println(r1.getBase());
         System.out.println(r1.getAltura());
@@ -46,13 +46,14 @@ public class Mainn {
 
 
         //Main Persona
-        /*Persona persona = new Persona("pepe", 206, "Avenida 1");
+        Persona persona = new Persona("pepe", 206, "Avenida 1");
 
-        persona.mostrarDatos();*/
+        //persona.mostrarDatos();
 
 
         //Main fecha
         Fecha fecha = new Fecha(20, 10 ,2010);
+        /*
         fecha.valida();
         fecha.diasMes();
         fecha.corta();
@@ -74,7 +75,12 @@ public class Mainn {
         System.out.println(" ");
 
         fecha.mayorQue(new Fecha(20, 10, 2010));
-        fecha.mayorQue(new Fecha(30, 10, 2010));
+        fecha.mayorQue(new Fecha(30, 10, 2010));*/
+
+
+        //Main libro
+        Libro libro = new Libro("las aventuras de buhler", persona, 22, 200, "Santillana", fecha);
+        libro.mostrarInformacion();
 
     }
 }

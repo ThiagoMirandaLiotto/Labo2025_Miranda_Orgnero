@@ -1,3 +1,5 @@
+package unidad_0;
+
 public class NumeroMayor {
     public static void main(String[] args) {
         int A = 67  ;

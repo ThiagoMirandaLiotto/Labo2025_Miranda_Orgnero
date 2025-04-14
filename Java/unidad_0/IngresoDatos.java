@@ -1,3 +1,5 @@
+package unidad_0;
+
 public class IngresoDatos {
     public static void main(String[] args) {
         //Declarar y dar valores a las variables

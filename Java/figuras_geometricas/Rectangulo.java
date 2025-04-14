@@ -1,3 +1,5 @@
+package figuras_geometricas;
+
 public class Rectangulo {
     private float base;
     private float altura;

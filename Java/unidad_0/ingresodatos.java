@@ -1,3 +1,5 @@
+package unidad_0;
+
 import java.util.Scanner;
 
 public class ingresodatos {

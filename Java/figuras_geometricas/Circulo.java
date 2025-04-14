@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package figuras_geometricas;
 
 public class Circulo {
     private float radio;

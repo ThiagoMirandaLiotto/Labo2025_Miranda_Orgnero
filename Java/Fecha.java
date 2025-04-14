@@ -29,7 +29,7 @@ public class Fecha {
         System.out.println("El mes N°" + mes + " tiene: " + meses[mes] + " dias.");
     }
     public void corta(){
-        System.out.println("Es el dia: " + dia + "-" + mes + "-" + anio);
+        System.out.println(dia + "-" + mes + "-" + anio);
     }
     public void larga(){
         System.out.println("Es el dia " + dia + " del mes " + mes + " del año " + anio);
