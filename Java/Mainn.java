@@ -79,8 +79,30 @@ public class Mainn {
 
 
         //Main libro
-        Libro libro = new Libro("las aventuras de buhler", persona, 22, 200, "Santillana", fecha);
+        /*Libro libro = new Libro("las aventuras de buhler", persona, 22, 200, "Santillana", fecha);
         libro.mostrarInformacion();
+
+        Libro libro2 = new Libro(1);
+
+        libro.fechaEsAnterior(libro2);*/
+
+        //Main cafetera
+        /*Cafetera cafetera = new Cafetera(1000, 10);
+
+        System.out.println(cafetera.cantidadActual);
+        cafetera.servirTaza(100);
+        System.out.println(cafetera.cantidadActual);
+        cafetera.vaciarCafetera();
+        System.out.println(cafetera.cantidadActual);
+        cafetera.llenarCafetera();
+        System.out.println(cafetera.cantidadActual);
+        cafetera.vaciarCafetera();
+        System.out.println(cafetera.cantidadActual);
+        cafetera.agregarCafe(500);
+        System.out.println(cafetera.cantidadActual);*/
+
+
+
 
     }
 }

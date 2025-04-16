@@ -28,6 +28,12 @@ public class Persona {
         return nombre;
     }
 
+    public Persona() {
+        this.nombre = "sin nombre";
+        this.edad = 0;
+        this.direccion = "sin direccion";
+    }
+
     public Persona(String nombre, int edad, String direccion){
         this.nombre = nombre;
         this.edad = edad;

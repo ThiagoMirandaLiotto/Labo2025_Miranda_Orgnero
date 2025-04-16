@@ -19,6 +19,26 @@ public class Libro {
         this.fechaPublicacion.corta();
     }
 
+    public void fechaEsAnterior(Libro libro){
+        boolean nashe = false;
+        if (this.fechaPublicacion.getAnio() < libro.getFechaPublicacion().getAnio()){
+            if (this.fechaPublicacion.getMes() < libro.getFechaPublicacion().getMes()){
+                if (this.fechaPublicacion.getDia() < libro.getFechaPublicacion().getDia()){
+                    nashe = true;
+                    System.out.println(nashe);
+                }
+            }
+        }
+        if (nashe = true){
+            System.out.println("La fecha del libro " + this.getTitulo() + " es MENOR a la del " + libro.getTitulo());
+        }
+        if (nashe = false){
+            System.out.println("La fecha del libro " + this.getTitulo() + " es MAYOR a la del " + libro.getTitulo());
+        }
+    }
+
+
+
     public String getTitulo() {
         return titulo;
     }
@@ -55,7 +75,22 @@ public class Libro {
     public void setFechaPublicacion(Fecha fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
-
+    public Libro(){
+        this.titulo = "sin titulo";
+        this.autor = new Persona();
+        this.ISBN = 0;
+        this.paginas = 0;
+        this.editorial = "sin editorial";
+        this.fechaPublicacion = new Fecha(16, 4, 2025);
+    }
+    public Libro(int ISBN){
+        this.titulo = "Buhler's book";
+        this.autor = new Persona("Santiago Buhler", 16, "Bunker 1320");
+        this.ISBN = ISBN;
+        this.paginas = 100;
+        this.editorial = "editorial bunker";
+        this.fechaPublicacion = new Fecha(16, 4, 2025);
+    }
     public Libro(String titulo, Persona autor, int ISBN, int paginas, String editorial, Fecha fechaPublicacion) {
         this.titulo = titulo;
         this.autor = autor;
@@ -64,4 +99,6 @@ public class Libro {
         this.editorial = editorial;
         this.fechaPublicacion = fechaPublicacion;
     }
+
+
 }
