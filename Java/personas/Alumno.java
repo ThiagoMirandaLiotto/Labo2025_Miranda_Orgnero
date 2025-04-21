@@ -11,11 +11,30 @@ public class Alumno {
     private ArrayList<Integer> listaDeNotas = new ArrayList<Integer>();
 
 
+
     void agregarNota(int nota){
         listaDeNotas.add(nota);
     }
 
+    void menorNota(){
+        int menorNota = listaDeNotas.getFirst();
+        for(int nota : listaDeNotas){
+            if(nota < menorNota){
+                menorNota = nota;
+            }
+        }
+        System.out.println(menorNota);
+    }
 
+    void mayorNota(){
+        int mayorNota = listaDeNotas.getFirst();
+        for(int nota : listaDeNotas){
+            if(nota > mayorNota){
+                mayorNota = nota;
+            }
+        }
+        System.out.println(mayorNota);
+    }
 
 
     public String getNombre() {
@@ -54,5 +73,26 @@ public class Alumno {
         this.apellido = apellido;
         this.fechaDeNacimiento = fechaDeNacimiento;
         this.listaDeNotas = listaDeNotas;
+    }
+
+
+    public static void main(String[] args) {
+        ArrayList<Integer> notas = new ArrayList<Integer>();
+        notas.add(3);
+        notas.add(8);
+        notas.add(6);
+        notas.add(9);
+        notas.add(8);
+        notas.add(6);
+        notas.add(5);
+
+        Alumno alumno = new Alumno("Nombre", "Apellido", new Fecha(5, 10, 2024), notas);
+
+        alumno.menorNota();
+        alumno.agregarNota(2);
+        alumno.menorNota();
+        alumno.mayorNota();
+        alumno.agregarNota(10);
+        alumno.mayorNota();
     }
 }
