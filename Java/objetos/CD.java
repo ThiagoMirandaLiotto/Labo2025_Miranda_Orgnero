@@ -52,6 +52,8 @@ public class CD {
     }
 
 
+
+    //MAIN
     public static void main(String[] args) {
         ArrayList<Cancion> canciones = new ArrayList<Cancion>();
         canciones.add(new Cancion("cancion1", new Persona()));

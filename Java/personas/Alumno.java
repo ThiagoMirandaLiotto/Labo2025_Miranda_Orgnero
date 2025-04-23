@@ -1,7 +1,9 @@
 package personas;
 
 import fechas.Fecha;
+import objetos.Materia;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Alumno {
@@ -9,8 +11,20 @@ public class Alumno {
     private String apellido;
     private Fecha fechaDeNacimiento;
     private ArrayList<Integer> listaDeNotas = new ArrayList<Integer>();
+    private ArrayList<Materia> materias = new ArrayList<Materia>();
 
+    public void agregarMateria(String materia, ArrayList<String> listaDeContenidos, ArrayList<Alumno> alumnosInscriptos){
+        materias.add(new Materia(materia, listaDeContenidos, alumnosInscriptos));
+    }
 
+    public void promedioNotas(){
+        int suma = 0;
+        for(int nota : listaDeNotas){
+            suma += nota;
+        }
+
+        System.out.println("Promedio de las notas del alumno: " + suma/listaDeNotas.size());
+    }
 
     void agregarNota(int nota){
         listaDeNotas.add(nota);
@@ -36,6 +50,12 @@ public class Alumno {
         System.out.println(mayorNota);
     }
 
+    public int calcularEdad(){
+        int anio = LocalDate.now().getYear();
+        int edad = fechaDeNacimiento.getAnio() - anio;
+
+        return edad;
+    }
 
     public String getNombre() {
         return nombre;
@@ -77,7 +97,8 @@ public class Alumno {
 
 
     public static void main(String[] args) {
-        ArrayList<Integer> notas = new ArrayList<Integer>();
+        // Lista de notas
+        ArrayList<Integer> notas = new ArrayList<>();
         notas.add(3);
         notas.add(8);
         notas.add(6);
@@ -86,13 +107,37 @@ public class Alumno {
         notas.add(6);
         notas.add(5);
 
-        Alumno alumno = new Alumno("Nombre", "Apellido", new Fecha(5, 10, 2024), notas);
+        // Crear alumnos
+        Alumno alumno1 = new Alumno("Juan", "Pérez", new Fecha(15, 5, 2005), notas);
+        Alumno alumno2 = new Alumno("Ana", "García", new Fecha(22, 7, 2004), notas);
+        Alumno alumno3 = new Alumno("Luis", "Martínez", new Fecha(30, 9, 2006), notas);
 
-        alumno.menorNota();
-        alumno.agregarNota(2);
-        alumno.menorNota();
-        alumno.mayorNota();
-        alumno.agregarNota(10);
-        alumno.mayorNota();
+        ArrayList<Alumno> alumnosInscriptos = new ArrayList<>();
+        alumnosInscriptos.add(alumno1);
+        alumnosInscriptos.add(alumno2);
+        alumnosInscriptos.add(alumno3);
+
+        ArrayList<String> contenidos = new ArrayList<>();
+        contenidos.add("Programación");
+        contenidos.add("Algoritmos");
+        contenidos.add("Estructuras de Datos");
+
+        // Crear materia y agregarla al alumno
+        Materia materia = new Materia("Programación", contenidos, alumnosInscriptos);
+        alumno1.agregarMateria("Programación", contenidos, alumnosInscriptos);
+
+        // Probar métodos
+        alumno1.menorNota();
+        alumno1.agregarNota(2);
+        alumno1.menorNota();
+        alumno1.mayorNota();
+        alumno1.agregarNota(10);
+        alumno1.mayorNota();
+        alumno1.promedioNotas();
+
+        System.out.println();
+        materia.promedioEdadAlumnos();
     }
+
+
 }
