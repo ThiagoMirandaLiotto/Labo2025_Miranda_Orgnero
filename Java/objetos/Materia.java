@@ -10,6 +10,11 @@ public class Materia {
     private ArrayList<String> listaDeContenidos = new ArrayList<String>();
     private ArrayList<Alumno> alumnosInscriptos = new ArrayList<Alumno>();
 
+    public Materia() {
+        this.materia = "";
+        this.listaDeContenidos = new ArrayList<String>();
+        this.alumnosInscriptos = new ArrayList<Alumno>();
+    }
 
     public void promedioEdadAlumnos(){
         int suma = 0;
@@ -44,6 +49,11 @@ public class Materia {
         alumnos.add(new Alumno());
         alumnos.add(new Alumno());
         alumnos.add(new Alumno());
+
+        // Probar métodos
+        Materia materia1 = new Materia();
+        materia1.promedioEdadAlumnos();
+
 
         Materia materia = new Materia("materia",lista, alumnos);
     }
