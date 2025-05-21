@@ -1,14 +1,11 @@
-package curso;
-
-import personas.Jugador;
+package campeonato;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Equipo {
     private String nombre;
     private String barrio;
-    private ArrayList<Jugador> jugadores = new ArrayList<>();
+    private ArrayList<Jugador> jugadores;
     private Jugador capitan;
     private String disponibilidadHoraria; // "mañana", "tarde" o "noche"
 
@@ -42,9 +39,6 @@ public class Equipo {
 
 
 
-
-
-
     public String getNombre() {return nombre;}
     public String getBarrio() {return barrio;}
     public ArrayList<Jugador> getJugadores() {return jugadores;}
@@ -56,4 +50,12 @@ public class Equipo {
     public void setJugadores(ArrayList<Jugador> jugadores) {this.jugadores = jugadores;}
     public void setCapitan(Jugador capitan) {this.capitan = capitan;}
     public void setDisponibilidadHoraria(String disponibilidadHoraria) {this.disponibilidadHoraria = disponibilidadHoraria;}
+
+
+
+
+    public static void main(String[] args) {
+
+        Equipo equipo1 = new Equipo("Thiago", "San Telmo", "mañana");
+    }
 }

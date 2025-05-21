@@ -6,10 +6,7 @@ import objetos.Materia;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Alumno {
-    private String nombre;
-    private String apellido;
-    private Fecha fechaDeNacimiento;
+public class Alumno extends Persona{
     private ArrayList<Integer> listaDeNotas = new ArrayList<Integer>();
     private ArrayList<Materia> materias = new ArrayList<Materia>();
 
@@ -52,29 +49,11 @@ public class Alumno {
 
     public int calcularEdad(){
         int anio = LocalDate.now().getYear();
-        int edad = fechaDeNacimiento.getAnio() - anio;
+        int edad = super.getFechaNacimiento().getAnio() - anio;
 
         return edad;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    public String getApellido() {
-        return apellido;
-    }
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-    public Fecha getFechaDeNacimiento() {
-        return fechaDeNacimiento;
-    }
-    public void setFechaDeNacimiento(Fecha fechaDeNacimiento) {
-        this.fechaDeNacimiento = fechaDeNacimiento;
-    }
     public ArrayList<Integer> getListaDeNotas() {
         return listaDeNotas;
     }
@@ -83,15 +62,11 @@ public class Alumno {
     }
 
     public Alumno(){
-        this.nombre = "alumnoNombre";
-        this.apellido = "alumnoApellido";
-        this.fechaDeNacimiento = new Fecha(20, 10, 2010);
+        super();
         this.listaDeNotas = new ArrayList<Integer>();
     }
-    public Alumno(String nombre, String apellido, Fecha fechaDeNacimiento, ArrayList<Integer> listaDeNotas) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.fechaDeNacimiento = fechaDeNacimiento;
+    public Alumno(String nombre, String apellido, int DNI, Fecha fechaDeNacimiento, String direccion, ArrayList<Integer> listaDeNotas) {
+        super(nombre, apellido, DNI ,fechaDeNacimiento, direccion);
         this.listaDeNotas = listaDeNotas;
     }
 
@@ -108,9 +83,9 @@ public class Alumno {
         notas.add(5);
 
         // Crear alumnos
-        Alumno alumno1 = new Alumno("Juan", "Pérez", new Fecha(15, 5, 2005), notas);
-        Alumno alumno2 = new Alumno("Ana", "García", new Fecha(22, 7, 2004), notas);
-        Alumno alumno3 = new Alumno("Luis", "Martínez", new Fecha(30, 9, 2006), notas);
+        Alumno alumno1 = new Alumno("Juan", "Pérez", 48232512, new Fecha(15, 5, 2005), "macedonio 1241", notas);
+        Alumno alumno2 = new Alumno("Ana", "García", 48236542, new Fecha(22, 7, 2004), "tusuegra 2714", notas);
+        Alumno alumno3 = new Alumno("Luis", "Martínez", 41136142, new Fecha(30, 9, 2006), "Dueña 2124", notas);
 
         ArrayList<Alumno> alumnosInscriptos = new ArrayList<>();
         alumnosInscriptos.add(alumno1);
@@ -138,6 +113,4 @@ public class Alumno {
         System.out.println();
         materia.promedioEdadAlumnos();
     }
-
-
 }

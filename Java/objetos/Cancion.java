@@ -22,7 +22,7 @@ public class Cancion {
 
     public Cancion(){
         this.titulo = "";
-        this.autor = new Persona("", 0, "");
+        this.autor = new Persona();
     }
 
     public Cancion(String titulo, Persona autor) {
