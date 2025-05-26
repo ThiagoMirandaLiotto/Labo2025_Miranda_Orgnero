@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Alumno extends Persona{
     private ArrayList<Integer> listaDeNotas = new ArrayList<Integer>();
     private ArrayList<Materia> materias = new ArrayList<Materia>();
+    private String division;
 
     public void agregarMateria(String materia, ArrayList<String> listaDeContenidos, ArrayList<Alumno> alumnosInscriptos){
         materias.add(new Materia(materia, listaDeContenidos, alumnosInscriptos));
@@ -60,14 +61,28 @@ public class Alumno extends Persona{
     public void setListaDeNotas(ArrayList<Integer> listaDeNotas) {
         this.listaDeNotas = listaDeNotas;
     }
+    public String getDivision(){
+        return division;
+    }
+    public void setDivision(String division){
+        this.division = division;
+    }
 
     public Alumno(){
         super();
         this.listaDeNotas = new ArrayList<Integer>();
+        this.division = "A";
     }
     public Alumno(String nombre, String apellido, int DNI, Fecha fechaDeNacimiento, String direccion, ArrayList<Integer> listaDeNotas) {
         super(nombre, apellido, DNI ,fechaDeNacimiento, direccion);
         this.listaDeNotas = listaDeNotas;
+        this.division = "A";
+    }
+
+    public Alumno(String nombre, String apellido, String division){
+        super(nombre, apellido, 1, new Fecha(1, 1, 2000), "direccion");
+        this.listaDeNotas = new ArrayList<>();
+        this.division = division;
     }
 
 
