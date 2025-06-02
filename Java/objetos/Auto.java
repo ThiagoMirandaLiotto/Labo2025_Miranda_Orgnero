@@ -1,3 +1,5 @@
+/*
+
 package objetos;
 
 import vehiculos.Vehiculo;
@@ -34,3 +36,4 @@ public class Auto extends Vehiculo {
 }
 
 
+*/

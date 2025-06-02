@@ -1,3 +1,5 @@
+/*
+
 package algoritmos;
 
 import personas.Persona;
@@ -57,3 +59,5 @@ public class OperacionesBasicas {
         }
     }
 }
+
+*/

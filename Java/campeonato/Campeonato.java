@@ -1,3 +1,5 @@
+/*
+
 package curso;
 
 import fechas.Partido;
@@ -39,5 +41,4 @@ public class campeonato {
     }
 }
 
-public void mostrarFixture() {
-}
+*/

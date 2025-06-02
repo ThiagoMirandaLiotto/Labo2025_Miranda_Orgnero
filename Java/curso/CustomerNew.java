@@ -1,3 +1,6 @@
+/*
+
+
 package personas;
 
 import objetos.Clothing;
@@ -89,3 +92,4 @@ public class Customer
           
         }
     }
+*/

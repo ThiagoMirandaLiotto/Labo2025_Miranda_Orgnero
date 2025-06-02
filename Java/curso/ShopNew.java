@@ -1,3 +1,5 @@
+/*
+
 package objetos;
 import personas.Customer;
 import objetos.Clothing;
@@ -45,3 +47,6 @@ public class Shop
 
         }
     }
+
+
+*/
