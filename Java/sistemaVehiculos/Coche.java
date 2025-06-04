@@ -1,5 +1,6 @@
 package sistemaVehiculos;
 
+import objetos.Color;
 import vehiculos.Vehiculo;
 
 public class Coche extends Vehiculo {
@@ -25,7 +26,7 @@ public class Coche extends Vehiculo {
     }
     public void setVelocidad(int velocidad) {this.velocidad = velocidad;}
 
-    public Coche(String marca, String modelo, String color){
+    public Coche(String marca, String modelo, Color color){
         super(marca, modelo, color, 4, 2025);
         this.velocidad = 0;
     }

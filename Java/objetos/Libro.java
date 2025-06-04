@@ -1,4 +1,3 @@
-/*
 
 package objetos;
 
@@ -10,7 +9,7 @@ public class Libro {
     Persona autor;
     int ISBN;
     int paginas;
-    String editorial;
+    Editorial editorial;
     Fecha fechaPublicacion;
 
 
@@ -70,10 +69,10 @@ public class Libro {
     public void setPaginas(int paginas) {
         this.paginas = paginas;
     }
-    public String getEditorial() {
+    public Editorial getEditorial() {
         return editorial;
     }
-    public void setEditorial(String editorial) {
+    public void setEditorial(Editorial editorial) {
         this.editorial = editorial;
     }
     public Fecha getFechaPublicacion() {
@@ -87,18 +86,18 @@ public class Libro {
         this.autor = new Persona();
         this.ISBN = 0;
         this.paginas = 0;
-        this.editorial = "sin editorial";
+        this.editorial = Editorial.INTERZONA;
         this.fechaPublicacion = new Fecha(16, 4, 2025);
     }
     public Libro(int ISBN){
         this.titulo = "Buhler's book";
-        this.autor = new Persona("Santiago Buhler", 16, "Bunker 1320");
+        this.autor = new Persona("Santiago", "Buhler", 1921, new Fecha(10, 10, 2000), "Casa de buhler");
         this.ISBN = ISBN;
         this.paginas = 100;
-        this.editorial = "editorial bunker";
+        this.editorial = Editorial.EL_ATANEO;
         this.fechaPublicacion = new Fecha(16, 4, 2025);
     }
-    public Libro(String titulo, Persona autor, int ISBN, int paginas, String editorial, Fecha fechaPublicacion) {
+    public Libro(String titulo, Persona autor, int ISBN, int paginas, Editorial editorial, Fecha fechaPublicacion) {
         this.titulo = titulo;
         this.autor = autor;
         this.ISBN = ISBN;
@@ -110,5 +109,3 @@ public class Libro {
 
 }
 
-
-*/

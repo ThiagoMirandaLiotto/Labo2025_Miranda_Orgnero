@@ -7,10 +7,10 @@ public class Equipo {
     private String barrio;
     private ArrayList<Jugador> jugadores;
     private Jugador capitan;
-    private String disponibilidadHoraria; // "mañana", "tarde" o "noche"
+    private Turno disponibilidadHoraria; // "mañana", "tarde" o "noche"
 
 
-    public Equipo(String nombre, String barrio, String disponibilidadHoraria){
+    public Equipo(String nombre, String barrio, Turno disponibilidadHoraria){
         this.nombre = nombre;
         this.barrio = barrio;
         this.disponibilidadHoraria = disponibilidadHoraria;
@@ -43,19 +43,19 @@ public class Equipo {
     public String getBarrio() {return barrio;}
     public ArrayList<Jugador> getJugadores() {return jugadores;}
     public Jugador getCapitan() {return capitan;}
-    public String getDisponibilidadHoraria() {return disponibilidadHoraria;}
+    public Turno getDisponibilidadHoraria() {return disponibilidadHoraria;}
 
     public void setNombre(String nombre) {this.nombre = nombre;}
     public void setBarrio(String barrio) {this.barrio = barrio;}
     public void setJugadores(ArrayList<Jugador> jugadores) {this.jugadores = jugadores;}
     public void setCapitan(Jugador capitan) {this.capitan = capitan;}
-    public void setDisponibilidadHoraria(String disponibilidadHoraria) {this.disponibilidadHoraria = disponibilidadHoraria;}
+    public void setDisponibilidadHoraria(Turno disponibilidadHoraria) {this.disponibilidadHoraria = disponibilidadHoraria;}
 
 
 
 
     public static void main(String[] args) {
 
-        Equipo equipo1 = new Equipo("Thiago", "San Telmo", "mañana");
+        Equipo equipo1 = new Equipo("Thiago", "San Telmo", Turno.MANIANA);
     }
 }

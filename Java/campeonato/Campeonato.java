@@ -1,13 +1,12 @@
-/*
+package campeonato;
 
-package curso;
-
+import fechas.Fecha;
 import fechas.Partido;
 import campeonato.Equipo;
 
 import java.util.ArrayList;
 
-public class campeonato {
+public class Campeonato {
     private ArrayList<Equipo> equipos = new ArrayList<>();
     private ArrayList<Partido> partidos = new ArrayList<>();
 
@@ -16,14 +15,14 @@ public class campeonato {
     }
 
     public void dividirEquipos(){
-        campeonato Cmaniana = new campeonato();
-        campeonato Ctarde = new campeonato();
-        campeonato Cnoche = new campeonato();
+        Campeonato Cmaniana = new Campeonato();
+        Campeonato Ctarde = new Campeonato();
+        Campeonato Cnoche = new Campeonato();
 
         for (int i = 0; i < equipos.size(); i++) {
-            Cmaniana.registrarEquipo();
-            Ctarde.registrarEquipo();
-            Cnoche.registrarEquipo();
+            Cmaniana.registrarEquipo(new Equipo("Equipo", "Barrio", Turno.MANIANA));
+            Ctarde.registrarEquipo(new Equipo("Equipo", "Barrio", Turno.TARDE));
+            Cnoche.registrarEquipo(new Equipo("Equipo", "Barrio", Turno.NOCHE));
         }
         }
     public void generarFixture() {
@@ -40,5 +39,3 @@ public class campeonato {
         }
     }
 }
-
-*/
