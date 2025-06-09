@@ -5,6 +5,7 @@ public class SensorTemperatura extends Dispositivo{
         super(conectado, medida, umbral_inicial, año_adquisicion);
     }
 
+    @Override
     public void Alarma(){
         if(getConectado() && getUmbral_inicial() < getMedida()){
             System.out.println("Cuidado! La temperatura sube");

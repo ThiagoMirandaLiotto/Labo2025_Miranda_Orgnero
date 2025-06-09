@@ -30,6 +30,7 @@ public class SensorCompuesto {
         this.sensorTemperatura = sensorTemperatura;
     }
 
+
     public void Alarma(){
         detectorHumo.Alarma();
         sensorPresion.Alarma();

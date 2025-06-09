@@ -1,6 +1,6 @@
 package sistema_alarmas;
 
-public class Dispositivo {
+public abstract class Dispositivo {
     private boolean alarma_activada = false;
     private boolean conectado;
     private int medida;
@@ -45,4 +45,6 @@ public class Dispositivo {
     public void setAlarma_activada(boolean alarma_activada) {
         this.alarma_activada = alarma_activada;
     }
+
+    abstract void Alarma();
 }
