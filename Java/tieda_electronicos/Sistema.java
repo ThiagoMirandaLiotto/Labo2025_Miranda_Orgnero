@@ -59,15 +59,15 @@ public class Sistema {
         Sistema sistema = new Sistema(new ArrayList<>());
 
         ArrayList<Producto> p1 = new ArrayList<>();
-        Sonido auriculares = new Sonido("A1", 1213.0, 3, true);
-        Televisor samsungB30 = new Televisor("A1", 1213.0, 3, Tecnologia.FULLHD ,24);
-        CargadorPortatil C1 = new CargadorPortatil("A1", 1213.0, 3, 234);
+        Sonido auriculares = new Sonido("auriculares",  1213.0, 3, true);
+        Televisor samsungB30 = new Televisor("tele", 1213.0, 4, Tecnologia.FULLHD ,24);
+        CargadorPortatil C1 = new CargadorPortatil("cargador", 1213.0, 10, 234);
 
         sistema.agregarProducto(auriculares);
         sistema.agregarProducto(samsungB30);
         sistema.agregarProducto(C1);
 
-        sistema.mayorStock();
-        sistema.menorStock();
+        System.out.println(sistema.mayorStock().getNombre());
+        System.out.println(sistema.menorStock().getNombre());
     }
 }
