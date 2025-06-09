@@ -17,9 +17,9 @@ public class SistemaTest {
     public void setUp() {
         sistema = new Sistema(new ArrayList<>());
 
-        sonido = new Sonido("auriculares", 2500.0, 5, true);
-        televisor = new Televisor("tele", 80000.0, 2, Tecnologia.CUATROK, 3840);
-        cargador = new CargadorPortatil("cargador", 3000.0, 10, 4);
+        sonido = new Sonido("auriculares", 200, 5, true);
+        televisor = new Televisor("tele", 300, 2, Tecnologia.CUATROK, 1920);
+        cargador = new CargadorPortatil("cargador", 600, 10, 4);
 
         sistema.agregarProducto(sonido);
         sistema.agregarProducto(televisor);
@@ -29,7 +29,7 @@ public class SistemaTest {
     @Test
     public void testAgregarProducto() {
         int cantidadAntes = sistema.getProductos().size();
-        Producto nuevo = new Sonido("auriculares 2", 1500.0, 3, false);
+        Producto nuevo = new Sonido("auriculares 2", 8, 3, false);
         sistema.agregarProducto(nuevo);
         assertEquals(cantidadAntes + 1, sistema.getProductos().size());
         assertTrue(sistema.getProductos().contains(nuevo));
@@ -43,7 +43,7 @@ public class SistemaTest {
 
     @Test
     public void testModificarProducto() {
-        Sonido nuevoSonido = new Sonido("auriculares 3", 2700.0, 6, false);
+        Sonido nuevoSonido = new Sonido("auriculares 3", 10, 6, false);
         sistema.modificarProducto(sonido, nuevoSonido);
         assertFalse(sistema.getProductos().contains(sonido));
         assertTrue(sistema.getProductos().contains(nuevoSonido));
