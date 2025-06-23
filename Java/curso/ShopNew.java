@@ -1,5 +1,4 @@
 /*
-
 package objetos;
 import personas.Customer;
 import objetos.Clothing;
@@ -17,6 +16,7 @@ public class Shop
             c1.setName("pinky");
             c1.setSize('s');
             System.out.println("Hello"+c1.getName());
+            System.out.println("Min price"+Clothing.min_price);
 
             //System.out.println("Iteam 1 datos:"+" "+item1.getDescription()+" "+ item1.getPrice()+ " "+item1.getSize());
             //System.out.println("Iteam 2 datos:"+" "+item2.getDescription()+" "+ item2.getPrice()+ " "+item2.getSize());
@@ -47,6 +47,4 @@ public class Shop
 
         }
     }
-
-
 */
