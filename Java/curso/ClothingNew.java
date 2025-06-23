@@ -1,5 +1,3 @@
-/*
-
 package objetos;
 
 public class Clothing
@@ -9,8 +7,8 @@ public class Clothing
         private String description;
         private double price;
         private char size='s';
-        private final double min_tax=0.2;
-        private final int min_price=10;
+        public final static double min_tax=0.2;
+        public final static double min_price=10;
 
         public Clothing(String description, double price, char size){
                 this.description=description;
@@ -49,10 +47,13 @@ public class Clothing
 
         public static void main(String[] args) {
 
-          
+        @Override 
+        public String toString(){
+                return getDescription()+","+getPrice()+ ","+getSize();
+        }
+
 
 
           
         }
     }
-*/
