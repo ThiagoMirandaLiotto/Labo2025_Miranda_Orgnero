@@ -1,6 +1,4 @@
 /*
-
-
 package personas;
 
 import objetos.Clothing;
@@ -34,7 +32,8 @@ public class Customer
 
             for (Clothing item : items){
                 if(getSize()==item.getSize()) {
-                    System.out.println("Iteams datos:"+" "+item.getDescription()+" "+ item.getPrice()+ " "+item.getSize());
+                    //System.out.println("Iteams datos:"+" "+item.getDescription()+" "+ item.getPrice()+ " "+item.getSize());
+                    System.out.println("Item "+ item);
                     total = total + item.getPrice();
                     if(total<15) {
                     } break;
