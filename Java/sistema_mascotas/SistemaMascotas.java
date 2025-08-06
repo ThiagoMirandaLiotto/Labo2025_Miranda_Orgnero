@@ -47,9 +47,25 @@ public class SistemaMascotas {
 
     public void saludar(String nombreMascota, String usuario) {
         for (Mascota m : mascotas){
-            if (usuario.equals(m.getDuenio())){
-                System.out.println(m.saludar());
+            if (nombreMascota.equals(m.getNombre())){
+                if (usuario.equals(m.getDuenio())){
+                    System.out.println(m.saludarNormal());
+                    if (m instanceof Pez){
+                        ((Pez) m).setVidas(((Pez) m).getVidas()-1);
+                        if (((Pez) m).getVidas() == 0){
+                            mascotas.remove(m);
+                        }
+                    }
+                }
+
+                else {
+                    System.out.println(m.saludarNoDuenio());
+                    if (m instanceof Pez){
+                        mascotas.remove(m);
+                    }
+                }
             }
+
 
         }
     }

@@ -21,8 +21,9 @@ public abstract class Mascota {
         this.duenio = duenio;
     }
 
-    public abstract String saludar();
-    public abstract String saludoExtraño();
+    public abstract String saludarNormal();
+    public abstract String saludarNoDuenio();
     public abstract void alimentar();
     public abstract String tipo();
+
 }

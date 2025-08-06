@@ -1,8 +1,9 @@
-/*
-package objetos;
-import personas.Customer;
+
+package curso;
 import objetos.Clothing;
-public class Shop
+import personas.Customer;
+
+public class ShopNew
 
 {
         public static void main(String[] args) {
@@ -12,8 +13,8 @@ public class Shop
             Clothing item2 = new Clothing("Orange T-shirt", 10.5, 's');
             Clothing item4 = new Clothing("Green scarf", 15.5, 's');
             Clothing[] items = {item1, item2,new Clothing ("Blue T-Shirt", 29.9, 's'), item4};
-            Customer c1 = new Customer("pinky",3, 's');
-            c1.setName("pinky");
+            Customer c1 = new Customer("Clienteee",3, 's');
+            c1.setName("clienteee");
             c1.setSize('s');
             System.out.println("Hello"+c1.getName());
             System.out.println("Min price"+Clothing.min_price);
@@ -22,29 +23,14 @@ public class Shop
             //System.out.println("Iteam 2 datos:"+" "+item2.getDescription()+" "+ item2.getPrice()+ " "+item2.getSize());
             //total = ((item2.getPrice()*2)+item1.getPrice())*(1+tax);
 
-            int mesurement = 3;
-            c1.setSize(mesurement);
-            //switch(mesurement){
-              //  case 1,2,3:
-                //    c1.setSize('s');
-                  //  break;
-
-                //case 4, 5, 6:
-                  //  c1.setSize('m');
-                   // break;
-                //case 7, 8 ,9:
-                  //  c1.setSize('l');
-                  //  break;
-               // default:
-                 //   c1.setSize('x');
-            //}
-           
-        c1.addItems(items);
-
-
-
+            for(Clothing item : items) {
+                if(item.getSize() == (c1.getSize())){
+                    total += item.getPrice();
+                    // System.out.println("Description: " + item.getDescription() + ", Price: " + item.getPrice() + ", Size: " + item.getSize());
+                    System.out.println("Description: " + item);
+                    if (total > 15){ break; }
+                }
+            }
             System.out.println("total="+ c1.getTotalClothingCost());
-
         }
     }
-*/

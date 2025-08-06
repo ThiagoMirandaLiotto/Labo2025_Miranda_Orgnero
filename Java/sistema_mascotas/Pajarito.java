@@ -12,14 +12,20 @@ public class Pajarito extends Mascota {
     }
 
     @Override
-    public String saludar() {
+    public String saludarNormal() {
         String saludoBase = "pio";
+
         return saludoBase;
+
     }
     @Override
-    public String saludoExtraño(){
-        return "PIO!";
+    public String saludarNoDuenio() {
+        String saludoExtraño = "";
+
+        return saludoExtraño;
+
     }
+
 
     @Override
     public void alimentar() {

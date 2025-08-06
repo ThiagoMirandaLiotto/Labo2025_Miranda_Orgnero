@@ -8,14 +8,20 @@ package sistema_mascotas;
         }
 
         @Override
-        public String saludar() {
+        public String saludarNormal() {
             String saludoBase = "miau";
+
             return saludoBase;
+
         }
         @Override
-        public String saludoExtraño(){
-            return "GUAU!";
+        public String saludarNoDuenio() {
+            String saludoExtraño = "MIAU";
+
+            return saludoExtraño;
+
         }
+
         @Override
         public void alimentar() {
             alegria++;

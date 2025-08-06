@@ -8,14 +8,21 @@ public class Perro extends Mascota {
     }
 
     @Override
-    public String saludar() {
+    public String saludarNormal() {
         String saludoBase = "guau";
+
         return saludoBase;
+
     }
     @Override
-    public String saludoExtraño(){
-        return "GUAU!";
+    public String saludarNoDuenio() {
+        String saludoExtraño = "GUAU";
+
+        return saludoExtraño;
+
     }
+
+
 
     @Override
     public void alimentar() {

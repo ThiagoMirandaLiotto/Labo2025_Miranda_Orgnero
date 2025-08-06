@@ -7,17 +7,38 @@ public class Pez extends Mascota {
         super(nombre, duenio);
     }
 
+    public int getVidas() {
+        return vidas;
+    }
+
+    public void setVidas(int vidas) {
+        this.vidas = vidas;
+    }
+
     @Override
-    public String saludar() {
-        return "";
+    public String saludarNormal(String duenio, String nombre) {
+        String noSaludo = "";
+        if (duenio.equals(getDuenio())){
+            --vidas;
+        }
+        else {
+            vidas = 0;
+        }
+        return noSaludo;
     }
     @Override
-    public String saludoExtraño(){
-        return "";
+    public String saludarNoDuenio() {
+        String saludoExtraño = "";
+
+        return saludoExtraño;
+
     }
+
     @Override
     public void alimentar() {
-        if (vidas > 0) vidas++;
+        if (vidas > 0) {
+            vidas++;
+        }
     }
 
     public boolean estaMuerto() {
