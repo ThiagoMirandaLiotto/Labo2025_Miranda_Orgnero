@@ -15,7 +15,7 @@ public class Familia {
     }
 
     public Persona mas_calorias(){
-        Persona p_mas_calorias;
+        Persona p_mas_calorias = new Persona();
         for(Persona p : familiares){
             if(p.calorias_totales() > p_mas_calorias.calorias_totales()){
                 p_mas_calorias = p;
@@ -25,7 +25,7 @@ public class Familia {
     }
 
     public Persona menos_calorias(){
-        Persona p_menos_calorias;
+        Persona p_menos_calorias = null;
         for(Persona p : familiares){
             if(p.calorias_totales() < p_menos_calorias.calorias_totales()){
                 p_menos_calorias = p;

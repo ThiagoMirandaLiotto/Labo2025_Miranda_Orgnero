@@ -22,6 +22,9 @@ public abstract class Mascota {
     }
 
     public abstract String saludarNormal();
+
+    public abstract String saludarNormal(String duenio, String nombre);
+
     public abstract String saludarNoDuenio();
     public abstract void alimentar();
     public abstract String tipo();

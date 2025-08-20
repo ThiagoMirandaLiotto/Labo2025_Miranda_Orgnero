@@ -14,6 +14,12 @@ package sistema_mascotas;
             return saludoBase;
 
         }
+
+        @Override
+        public String saludarNormal(String duenio, String nombre) {
+            return "";
+        }
+
         @Override
         public String saludarNoDuenio() {
             String saludoExtraño = "MIAU";

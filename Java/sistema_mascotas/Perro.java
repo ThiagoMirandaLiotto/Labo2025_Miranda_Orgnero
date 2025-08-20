@@ -14,6 +14,12 @@ public class Perro extends Mascota {
         return saludoBase;
 
     }
+
+    @Override
+    public String saludarNormal(String duenio, String nombre) {
+        return "";
+    }
+
     @Override
     public String saludarNoDuenio() {
         String saludoExtraño = "GUAU";

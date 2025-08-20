@@ -18,6 +18,12 @@ public class Pajarito extends Mascota {
         return saludoBase;
 
     }
+
+    @Override
+    public String saludarNormal(String duenio, String nombre) {
+        return "";
+    }
+
     @Override
     public String saludarNoDuenio() {
         String saludoExtraño = "";

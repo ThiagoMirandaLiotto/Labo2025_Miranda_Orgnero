@@ -7,6 +7,11 @@ public class Pez extends Mascota {
         super(nombre, duenio);
     }
 
+    @Override
+    public String saludarNormal() {
+        return "";
+    }
+
     public int getVidas() {
         return vidas;
     }

@@ -1,16 +1,18 @@
 package fragmento_codigo;
 
 public class Throws {
-    public class Main {
-        public static void main(String[] args) throws NullPointerException {
-            String nombre = null;
+    public static void longitudNombre(String nombre) throws NullPointerException{
+        System.out.println("El largo del nombre es: " + nombre.length());
+    }
+    public static void main(String[] args){
+        String nombre = "null";
 
-            if (nombre == null) {
-                throw new NullPointerException("El nombre no puede ser null");
-            }
-
-            System.out.println("El largo del nombre es: " + nombre.length());
-            System.out.println("Firma: Juan Pérez");
+        try {
+            longitudNombre(nombre);
+        } catch (NullPointerException e) {
+            System.err.println("Error: El nombre no puede ser null. " + e);
+        }finally {
+            System.out.println("Firma: thiago miranda liotto");
         }
     }
 }
