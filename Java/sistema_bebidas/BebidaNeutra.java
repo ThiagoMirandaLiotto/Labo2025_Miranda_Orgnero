@@ -3,8 +3,8 @@ package sistema_bebidas;
 public class BebidaNeutra extends Bebida {
     private double coefPos, coefNeg;
 
-    public BebidaNeutra(String nombre, double coefPos, double coefNeg) {
-        super(nombre);
+    public BebidaNeutra(String nombre, double coefPos, double coefNeg, int stock) {
+        super(nombre, stock);
         this.coefPos = coefPos;
         this.coefNeg = coefNeg;
     }

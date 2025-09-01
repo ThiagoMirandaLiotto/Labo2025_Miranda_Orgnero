@@ -1,9 +1,9 @@
 package consumo_electricidad;
 
-public class Duenio {
-    private String nombre;
-    private String apellido;
-    private int dni;
+import personas.Persona;
 
-
+public class Duenio extends Persona {
+    public Duenio(String nombre, String apellido, int dni) {
+        super(nombre, apellido, dni);
+    }
 }

@@ -14,6 +14,14 @@ public class Componente {
         this.precio = precio;
         this.stock = stock;
     }
+
+    public void reducirStock() throws SinStockException {
+        if (stock <= 0) {
+            throw new SinStockException("No hay stock disponible para el componente: " + nombre);
+        }
+        stock--;
+    }
+
     public String getFabricante() {
         return fabricante;
     }

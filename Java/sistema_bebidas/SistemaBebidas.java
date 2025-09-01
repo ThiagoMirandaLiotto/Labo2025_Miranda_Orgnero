@@ -11,11 +11,10 @@ public class SistemaBebidas {
         bebidas = new ArrayList<>();
     }
 
-    public void agregarPersona(Persona p) {
+    public void agregarPersona(Persona p) throws DniDuplicadoException {
         for (Persona per : personas) {
             if (per.getDni() == p.getDni()) {
-                System.out.println("DNI duplicado. No se agrega la persona.");
-                return;
+                throw new DniDuplicadoException("El DNI " + p.getDni() + " ya está registrado.");
             }
         }
         personas.add(p);
@@ -25,8 +24,10 @@ public class SistemaBebidas {
         bebidas.add(b);
     }
 
-    public Persona mejorCoeficiente() {
-        if (personas.isEmpty()) return null;
+    public Persona mejorCoeficiente() throws NoHayPersonasException {
+        if (personas.isEmpty()) {
+            throw new NoHayPersonasException("No hay personas registradas en el sistema.");
+        }
         Persona mejor = personas.get(0);
         for (Persona p : personas) {
             if (p.getCoefHidratacion() > mejor.getCoefHidratacion()) {
@@ -36,8 +37,10 @@ public class SistemaBebidas {
         return mejor;
     }
 
-    public Persona peorCoeficiente() {
-        if (personas.isEmpty()) return null;
+    public Persona peorCoeficiente() throws NoHayPersonasException {
+        if (personas.isEmpty()) {
+            throw new NoHayPersonasException("No hay personas registradas en el sistema.");
+        }
         Persona peor = personas.get(0);
         for (Persona p : personas) {
             if (p.getCoefHidratacion() < peor.getCoefHidratacion()) {
@@ -47,7 +50,7 @@ public class SistemaBebidas {
         return peor;
     }
 
-    public void registrarConsumo(int dni, String nombreBebida, int cantidad) {
+    public void registrarConsumo(int dni, String nombreBebida, int cantidad) throws BebidaNoDisponibleException {
         Persona persona = null;
         for (Persona p : personas) {
             if (p.getDni() == dni) {
@@ -64,10 +67,14 @@ public class SistemaBebidas {
             }
         }
 
-        if (persona != null && bebida != null) {
-            persona.registrarConsumo(bebida, cantidad);
-        } else {
-            System.out.println("Persona o bebida no encontrada.");
+        if (persona == null) {
+            throw new BebidaNoDisponibleException("La persona con DNI " + dni + " no existe.");
         }
+        if (bebida == null) {
+            throw new BebidaNoDisponibleException("La bebida '" + nombreBebida + "' no existe en el sistema.");
+        }
+
+        bebida.reducirStock(cantidad); //si no hay suficiente stock saa la exception
+        persona.registrarConsumo(bebida, cantidad);
     }
 }
