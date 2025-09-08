@@ -1,36 +1,78 @@
-
-package curso;
-import objetos.Clothing;
-import personas.Customer;
+package objetos;
+import io.helidon.webserver.Routing;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import io.helidon.webserver.ServerConfiguration;
+import io.helidon.webserver.WebServer;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ShopNew
 
 {
         public static void main(String[] args) {
-            double tax = 0.2;
+            System.out.println("Welcome to duke choice shop");
+            double tax = 1.2;
             double total = 0.0;
-            Clothing item1 = new Clothing("Blue Jacket", 20.9, 'm');
-            Clothing item2 = new Clothing("Orange T-shirt", 10.5, 's');
-            Clothing item4 = new Clothing("Green scarf", 15.5, 's');
-            Clothing[] items = {item1, item2,new Clothing ("Blue T-Shirt", 29.9, 's'), item4};
-            Customer c1 = new Customer("Clienteee",3, 's');
-            c1.setName("clienteee");
+            double promedio =0.0;
+            ClothingNew item1 = new ClothingNew("Blue Jacket", 20.9, 'm');
+            ClothingNew item2 = new ClothingNew("Orange T-shirt", 10.5, 's');
+            ClothingNew item4 = new ClothingNew("Green scarf", 15.5, 's');
+            ArrayList<ClothingNew>items=new ArrayList<>();
+            CustomerNew c1 = new CustomerNew();
+            items.add(item1);
+            items.add(item2);
+            items.add(item4);
+
+            c1.setNombre("pinky");
             c1.setSize('s');
-            System.out.println("Hello"+c1.getName());
-            System.out.println("Min price"+Clothing.min_price);
-
-            //System.out.println("Iteam 1 datos:"+" "+item1.getDescription()+" "+ item1.getPrice()+ " "+item1.getSize());
-            //System.out.println("Iteam 2 datos:"+" "+item2.getDescription()+" "+ item2.getPrice()+ " "+item2.getSize());
-            //total = ((item2.getPrice()*2)+item1.getPrice())*(1+tax);
-
-            for(Clothing item : items) {
-                if(item.getSize() == (c1.getSize())){
-                    total += item.getPrice();
-                    // System.out.println("Description: " + item.getDescription() + ", Price: " + item.getPrice() + ", Size: " + item.getSize());
-                    System.out.println("Description: " + item);
-                    if (total > 15){ break; }
-                }
+            System.out.println("Hello"+c1.getNombre());
+            Arrays.sort(new ArrayList[]{c1.getItems()});
+            try {
+                Itemlist list = new Itemlist(items);
+                Routing routing = Routing.builder()
+                    .get("/items",list).build();
+                ServerConfiguration config = ServerConfiguration.builder()
+                        .bindAddress(InetAddress.getLocalHost())
+                        .port(8888).build();
+                WebServer ws = WebServer.create(config,routing);
+                ws.start();
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+                throw new RuntimeException(e);
             }
-            System.out.println("total="+ c1.getTotalClothingCost());
+
+
+            for (ClothingNew i: c1.getItems()){
+                System.out.println("Iteam 1 datos:"+" "+i.getDescription()+" "+ i.getPrice()+ " "+i.getSize());
+            }
+
+
+
+
+
+            int mesurement = 3;
+            c1.setSize(mesurement);
+            //switch(mesurement){
+              //  case 1,2,3:
+                //    c1.setSize('s');
+                  //  break;
+
+                //case 4, 5, 6:
+                  //  c1.setSize('m');
+                   // break;
+                //case 7, 8 ,9:
+                  //  c1.setSize('l');
+                  //  break;
+               // default:
+                 //   c1.setSize('x');
+            //}
+           
+        c1.addItems(items);
+
+
+
+            System.out.println("total="+ c1.getTotalClothingCost()+" "+"y el promedio fue:"+c1.getPromedioClothingCost());
+
         }
     }
