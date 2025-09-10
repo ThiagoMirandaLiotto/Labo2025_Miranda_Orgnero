@@ -12,43 +12,27 @@ public class Department {
         this.employes = employes;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ArrayList<Employe> getEmployes() {
-        return employes;
-    }
-
-    public void setEmployes(ArrayList<Employe> employes) {
-        this.employes = employes;
-    }
-
+    public String getName() {return name;}
+    public void setName(String name) {this.name = name;}
+    public ArrayList<Employe> getEmployes() {return employes;}
+    public void setEmployes(ArrayList<Employe> employes) {this.employes = employes;}
+    
     public void addEmp(Employe anEmployee){
         if(ultimoempleadoagregadoIndex<employes.size()){
             ultimoempleadoagregadoIndex++;
             employes.add(anEmployee);
         }
     }
-
-
+    
     public ArrayList<Employe> getEmploye(){
-        ArrayList<Employe> actualizarEmpleados = new ArrayList<>();
-
+        ArrayList<Employe> actualizarEmpleados = new ArrayList<>();       
         for (Employe e: employes){
             actualizarEmpleados.add(e);
         }
         return actualizarEmpleados;
     }
 
-    public int getEmployescount(){
-        return ultimoempleadoagregadoIndex+1;
-    }
-
+    public int getEmployescount(){return ultimoempleadoagregadoIndex+1;}
     public Employe getEmployeeById(int empId){
         for(Employe e: employes){
 
@@ -58,8 +42,7 @@ public class Department {
         }
         return null;
     }
-
-
+    
     public double getTotalSalary(){
         double totalSalario=0.0;
         for (Employe e: employes){
@@ -78,3 +61,4 @@ public class Department {
         return name;
     }
 }
+
