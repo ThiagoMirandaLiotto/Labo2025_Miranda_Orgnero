@@ -48,7 +48,29 @@ public class Bar {
     }
 
 
-    public String beneficiosDeTrago(){
-        return beneficios.getTrago(); fekwlgniengiuqeghgviygvciyfciygvciygv
+    public int beneficiosDeTrago(){
+        int x = 0;
+        for (Beneficio b : beneficios){
+            if (b.esAcumulable()){
+                x++;
+            }
+        }
+
+        return x;
     }
+
+    public Diana dianaMasPuntajes(){
+        Diana diana = new DianaCircular();
+        int x = 0;
+        for (Diana d: Dianas){
+            if (d.cantidadPuntajes() > x){
+                x = d.cantidadPuntajes();
+                diana = d;
+            }
+        }
+
+        return diana;
+    }
+
+
 }
