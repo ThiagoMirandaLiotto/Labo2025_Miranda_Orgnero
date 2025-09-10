@@ -3,17 +3,14 @@ package personas;
 
 import objetos.Clothing;
 
-public class Customer
-
-{
+public class Customer{
     private String name;
     private char size;
     private Clothing[] items;
 
 
     public void addItems(Clothing[] someItems){
-        items=someItems;
-
+        items = someItems;
     }
 
     public Customer() {
@@ -25,14 +22,12 @@ public class Customer
             this.name=name;
             this.size=size;
             setSize(mesurmate);
-
     }
     public double getTotalClothingCost(){
-        double total=0.0;
+        double total = 0;
 
             for (Clothing item : items){
                 if(getSize()==item.getSize()) {
-                    //System.out.println("Iteams datos:"+" "+item.getDescription()+" "+ item.getPrice()+ " "+item.getSize());
                     System.out.println("Item "+ item);
                     total = total + item.getPrice();
                     if(total<15) {
@@ -43,21 +38,10 @@ public class Customer
             return total;
     }
 
-    public Clothing[] getItems() {
-        return items;
-    }
-
-    public void setItems(Clothing[] items) {
-        this.items = items;
-    }
-
-    public char getSize() {
-        return size;
-    }
-
-    public void setSize(char size) {
-        this.size = size;
-    }
+    public Clothing[] getItems() { return items;}
+    public void setItems(Clothing[] items) { this.items = items;}
+    public char getSize() {return size;}
+    public void setSize(char size) {this.size = size;}
     public void setSize(int mesurement){
         switch(mesurement){
             case 1,2,3:
@@ -75,19 +59,12 @@ public class Customer
 
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) {this.name = name;}
+    public String getName(){ return name;}
 
-    public String getName(){
-        return name;
-    }
-
-  
-        public static void main(String[] args) {
            
             
 
           
-        }
+        
     }
