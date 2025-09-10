@@ -1,45 +1,31 @@
 package objetos;
 
-import objetos.ClothingNew;
+import objetos.ClothingNuevo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class CustomerNew extends Persona
-
-{
-
+public class CustomerNuevo extends Persona{
     private char size;
-    private ArrayList<ClothingNew> items;
+    private ArrayList<ClothingNuevo> items;
 
 
-    public void addItems(ArrayList<ClothingNew> someItems){
-        items=someItems;
 
-    }
-
-    public CustomerNew(int dni, int edad, LocalDate fechaNacimiento, String nombre, char size, ArrayList<ClothingNew>items) {
+    public CustomerNuevo(int dni, int edad, LocalDate fechaNacimiento, String nombre, char size, ArrayList<ClothingNew>items) {
         super(dni, edad, nombre, fechaNacimiento);
-
         this.size = size;
         this.items = items;
     }
-    public CustomerNew() {
+    public CustomerNuevo() {
         super(100101010, 18, "juan", LocalDate.now());
         this.size = size;
         this.items = new ArrayList<>();
     }
 
-    public CustomerNew(char size, ArrayList<ClothingNew>items) {
-
-        this.size = size;
-        this.items = items;
-    }
-
     public double getTotalClothingCost(){
         double total=0.0;
 
-            for (ClothingNew item : items){
+            for (ClothingNuevo item : items){
                 if(getSize()==item.getSize()) {
                     System.out.println("Iteams datos:"+" "+item.getDescription()+" "+ item.getPrice()+ " "+item.getSize());
                     total = total + item.getPrice();
@@ -50,11 +36,11 @@ public class CustomerNew extends Persona
             return total;
     }
     public double getPromedioClothingCost(){
-    double promedio=0.0;
-    int cantidad=0;
-    double promi =0.0;
+    double promedio = 0.0;
+    int cantidad = 0;
+    double promi = 0.0;
 
-    for (ClothingNew item : items){
+    for (ClothingNuevo item : items){
         if(getSize()==item.getSize()) {
             System.out.println("Iteams datos:"+" "+item.getDescription()+" "+ item.getPrice()+ " "+item.getSize());
             promedio = promedio + item.getPrice();
@@ -71,22 +57,11 @@ public class CustomerNew extends Persona
     }
     return promi;
 }
-
-    public ArrayList<ClothingNew> getItems() {
-        return items;
-    }
-
-    public void setItems(ArrayList<ClothingNew>items) {
-        this.items = items;
-    }
-
-    public char getSize() {
-        return size;
-    }
-
-    public void setSize(char size) {
-        this.size = size;
-    }
+    
+    public ArrayList<ClothingNuevo> getItems() {return items;}
+    public void setItems(ArrayList<ClothingNuevo>items) {this.items = items;}
+    public char getSize() { return size;}
+    public void setSize(char size) {this.size = size;}
     public void setSize(int mesurement){
         switch(mesurement){
             case 1,2,3:
@@ -103,13 +78,8 @@ public class CustomerNew extends Persona
         }
 
     }
-
-
-  
-        public static void main(String[] args) {
-           
-            
-
-          
-        }
+    
+        public void addItems(ArrayList<ClothingNuevo> someItems){
+        items = someItems;
     }
+}
