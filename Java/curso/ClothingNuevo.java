@@ -3,7 +3,6 @@ package objetos;
 public class ClothingNuevo implements Comparable<ClothingNew>
 
 {
-
         private String description;
         private double price;
         private char size = 's';
