@@ -9,8 +9,6 @@ public class CustomerNuevo extends Persona{
     private char size;
     private ArrayList<ClothingNuevo> items;
 
-
-
     public CustomerNuevo(int dni, int edad, LocalDate fechaNacimiento, String nombre, char size, ArrayList<ClothingNew>items) {
         super(dni, edad, nombre, fechaNacimiento);
         this.size = size;
