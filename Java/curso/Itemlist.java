@@ -8,26 +8,18 @@ import java.util.ArrayList;
 import java.util.function.BiConsumer;
 
 public class Itemlist  implements Handler {
-    private ArrayList<ClothingNew>items;
+    private ArrayList<ClothingNuevo>items;
 
-    public Itemlist(ArrayList<ClothingNew> items) {
-        this.items = items;
-    }
-
-    public ArrayList<ClothingNew> getItems() {
-        return items;
-    }
-
-    public void setItems(ArrayList<ClothingNew> items) {
-        this.items = items;
-    }
+    public Itemlist(ArrayList<ClothingNuevo> items) {this.items = items;}
+    public ArrayList<ClothingNuevo> getItems() {return items;}
+    public void setItems(ArrayList<ClothingNuevo> items) {this.items = items;}
 
     @Override
     public void accept(ServerRequest serverRequest, ServerResponse serverResponse) {
         serverResponse.status(Http.Status.OK_200);
         serverResponse.headers().put("Content Type","text/plain: charset=UTF-8");
         StringBuilder result = new StringBuilder();
-        for (ClothingNew i: items){
+        for (ClothingNuevo i: items){
             result.append(i+"/n");
 
 
@@ -38,3 +30,4 @@ public class Itemlist  implements Handler {
 
 
 }
+
