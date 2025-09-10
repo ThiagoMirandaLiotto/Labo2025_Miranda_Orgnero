@@ -22,35 +22,13 @@ public abstract class Persona {
         this.fechaNacimiento = LocalDate.now();
     }
 
-    public int getDni() {
-        return dni;
-    }
-
-    public void setDni(int dni) {
-        this.dni = dni;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public LocalDate getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
+    public int getDni() {return dni;}
+    public void setDni(int dni) {this.dni = dni;}
+    public int getEdad() {return edad;}
+    public void setEdad(int edad) {this.edad = edad;}
+    public String getNombre() {return nombre;}
+    public void setNombre(String nombre) { this.nombre = nombre;}
+    public LocalDate getFechaNacimiento() {return fechaNacimiento;}
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {this.fechaNacimiento = fechaNacimiento;}
 }
+
