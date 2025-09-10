@@ -1,6 +1,6 @@
 package objetos;
 
-public class ClothingNuevo implements Comparable<ClothingNew>
+public class ClothingNuevo implements Comparable<ClothingNuevo>
 
 {
         private String description;
@@ -29,7 +29,7 @@ public class ClothingNuevo implements Comparable<ClothingNew>
         public void setSize(char size) {this.size = size;}
 
         @Override
-        public int compareTo(ClothingNew o) {
+        public int compareTo(ClothingNuevo o) {
                 return this.description.compareTo(o.description);
         }
 
