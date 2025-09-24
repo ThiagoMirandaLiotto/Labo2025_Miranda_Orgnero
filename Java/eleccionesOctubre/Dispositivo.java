@@ -3,8 +3,7 @@ package eleccionesOctubre;
 public class Dispositivo {
     protected String numeroSerie;
     protected String fabricante;
-    protected String
-    ;
+    protected String modelo;
 
     public Dispositivo(String numeroSerie, String fabricante, String modelo) {
         this.numeroSerie = numeroSerie;

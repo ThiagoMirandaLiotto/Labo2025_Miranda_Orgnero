@@ -1,4 +1,4 @@
-package objetos;
+/*package objetos;
 
 import objetos.ClothingNuevo;
 
@@ -70,7 +70,15 @@ public class CustomerNuevo extends Persona{
                     break;
                     case 7, 8 ,9:
                         size='l';
-                        break;
+                        package curso;
+import io.helidon.webserver.Routing;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import io.helidon.webserver.ServerConfiguration;
+import io.helidon.webserver.WebServer;
+import java.util.ArrayList;
+import java.util.Arrays;
+break;
                         default:
                             size='x';
         }
@@ -81,3 +89,4 @@ public class CustomerNuevo extends Persona{
         items = someItems;
     }
 }
+*/
