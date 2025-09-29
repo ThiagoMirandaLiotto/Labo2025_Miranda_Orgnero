@@ -30,14 +30,14 @@ public class Intermedio extends Participante implements CocinarPlatoPrincipal{
     }
 
     @Override
-    public void cocinarYServirPrincipal(PlatoPrincipal plato) {
-        for (Map.Entry<String, Integer> i: this.stock_propio.entrySet()){
-            if (!plato.getIngredientes().values().contains(i.getValue())){
+    public void cocinarYServirPrincipal(PlatoPrincipal plato) throws IngredienteNoDisponibleException {
+        for (Map.Entry<String, Integer> i: plato.getIngredientes().entrySet()){
+            if (!this.stock_propio.keySet().contains(i.getKey())){
                 throw new IngredienteNoDisponibleException("El participante no tiene el ingrediente: " + i.getKey());
-            }else if (plato.getIngredientes().get(i.getKey()) < i.getValue()){
+            }else if (this.stock_propio.get(i.getKey()) < i.getValue()){
                 throw new IngredienteNoDisponibleException("El participante no tiene suficientes " + i.getKey());
             }
         }
-        System.out.println("Plato principal cocinado y servido con exito");
+        System.out.println("Intermedio: Plato principal cocinado y servido con exito");
     }
 }

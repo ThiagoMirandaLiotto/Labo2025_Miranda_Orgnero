@@ -32,20 +32,20 @@ public class Experto extends Participante implements CocinarPlatoPrincipal, Coci
 
 
     @Override
-    public void cocinarYServirEntrada(PlatoEntrada plato) {
+    public void cocinarYServirEntrada(PlatoEntrada plato) throws TiempoInsuficienteException{
         if(plato.getTiempo() > this.tiempo_restante){
             throw new TiempoInsuficienteException("Tiempo insuficiente para la receta");
         }else{
-            System.out.println("Entrada cocinada y servida con exito");
+            System.out.println("Experto: Entrada cocinada y servida con exito");
         }
     }
 
     @Override
-    public void cocinarYServirPrincipal(PlatoPrincipal plato) {
+    public void cocinarYServirPrincipal(PlatoPrincipal plato) throws TiempoInsuficienteException{
         if(plato.getTiempo() > this.tiempo_restante){
             throw new TiempoInsuficienteException("Tiempo insuficiente para la receta");
-        }else{
-            System.out.println("Plato principal cocinado y servido con exito");
         }
+        System.out.println("Experto: Plato principal cocinado y servido con exito");
+
     }
 }

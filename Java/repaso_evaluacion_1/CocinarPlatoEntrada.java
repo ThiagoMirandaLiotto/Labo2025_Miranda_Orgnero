@@ -1,5 +1,5 @@
 package repaso_evaluacion_1;
 
 public interface CocinarPlatoEntrada {
-    void cocinarYServirEntrada(PlatoEntrada plato);
+    void cocinarYServirEntrada(PlatoEntrada plato) throws Exception;
 }

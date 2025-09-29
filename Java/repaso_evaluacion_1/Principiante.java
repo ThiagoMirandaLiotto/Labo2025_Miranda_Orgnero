@@ -35,6 +35,6 @@ public class Principiante extends Participante implements CocinarPlatoEntrada{
             }
         }
 
-        System.out.println("Entrada cocinada y servida con exito");
+        System.out.println("Principiante: Entrada cocinada y servida con exito");
     }
 }

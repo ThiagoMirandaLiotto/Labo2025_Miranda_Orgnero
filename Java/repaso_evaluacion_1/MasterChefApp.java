@@ -20,9 +20,9 @@ public class MasterChefApp {
         HashMap<String, Integer> i1i= new HashMap<>();
         HashMap<String, Integer> i2i= new HashMap<>();
         i1i.put("Tomate", 5);
-        i1i.put("Cebolla", 3);
-        i1i.put("Lechuga", 7);
-        i1i.put("Zanahoria", 4);
+        i1i.put("Cebolla", 10);
+        i1i.put("Lechuga", 12);
+        i1i.put("Zanahoria", 10);
         i1i.put("Pepino", 6);
         i1i.put("Ajo", 2);
         i1i.put("Pimiento rojo", 8);
@@ -48,28 +48,66 @@ public class MasterChefApp {
         i1.prepararLugar();
         System.out.println(" ");
         e1.prepararLugar();
+        System.out.println(" ");
 
         //////////////////////////////////////
         HashMap<String, Integer> pe1 = new HashMap<>();
+        HashMap<String, Integer> pe2 = new HashMap<>();
         pe1.put("Tomate", 5);
         pe1.put("Cebolla", 8);
-        pe1.put("Lechuga", 3);
+        pe1.put("Lechuga", 10);
         pe1.put("Zanahoria", 7);
+        pe2.put("Zanahoria", 15);
 
 
         PlatoEntrada entrada1 = new PlatoEntrada(pe1, 40);
-        //////////////////////////////////////
+        PlatoEntrada entrada2 = new PlatoEntrada(pe2, 100);
 
+        PlatoPrincipal principal1 = new PlatoPrincipal(pe1, 40);
+        PlatoPrincipal principal2 = new PlatoPrincipal(pe2, 100);
+        //////////////////////////////////////
         try{
             p1.cocinarYServirEntrada(entrada1);
         } catch (IngredienteNoDisponibleException e) {
-            System.err.println("error");
+            System.err.println("Principiante 1 - Error: " + e);
+        }
+        try{
+            p1.cocinarYServirEntrada(entrada2);
+        } catch (IngredienteNoDisponibleException e) {
+            System.err.println("Principiante 2 - Error: " + e);
         }
 
-        try{
-            p1.cocinarYServirEntrada(entrada1);
+        try {
+            i1.cocinarYServirPrincipal(principal1);
         } catch (IngredienteNoDisponibleException e) {
-            throw new RuntimeException(e);
+            System.err.println("Intermedio 1 - Error: " + e);
+        }
+        try {
+            i1.cocinarYServirPrincipal(principal2);
+        } catch (IngredienteNoDisponibleException e) {
+            System.err.println("Intermedio 2 - Error: " + e);
+        }
+
+
+        try{
+            e1.cocinarYServirEntrada(entrada1);
+        } catch (TiempoInsuficienteException e) {
+            System.err.println("Experto 1 - Error: " + e);
+        }
+        try{
+            e1.cocinarYServirEntrada(entrada2);
+        } catch (TiempoInsuficienteException e) {
+            System.err.println("Experto 2 - Error: " + e);
+        }
+        try{
+            e1.cocinarYServirPrincipal(principal1);
+        } catch (TiempoInsuficienteException e) {
+            System.err.println("Experto 3 - Error: " + e);
+        }
+        try{
+            e1.cocinarYServirPrincipal(principal2);
+        } catch (TiempoInsuficienteException e) {
+            System.err.println("Experto 4 - Error: " + e);
         }
     }
 }
